@@ -33,7 +33,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="testing_game.cpp" />
+    <ClCompile Include="testing_tube.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ball-Sort-Puzzle-Solver\Ball-Sort-Puzzle-Solver.vcxproj">
