@@ -54,7 +54,7 @@ bool Game::isValidMove(int s, int e)
 	return false;
 }
 
-bool Game::move(int s, int e)
+bool Game::makeMove(int s, int e)
 {
 	if (!isValidMove(s, e)) {
 		return false;
@@ -105,4 +105,21 @@ void Game::print()
 int Game::getNumTubes()
 {
 	return tubes.size();
+}
+
+std::vector<std::pair<int, int>> Game::generateValidMoves()
+{
+	std::vector<std::pair<int, int>> vec;
+	for (size_t i = 0; i < tubes.size(); i++)
+	{
+		for (size_t j = 0; j < tubes.size(); j++)
+		{
+			if (i != j) {
+				if (this->isValidMove(i, j)) {
+					vec.push_back(std::make_pair(i, j));
+				}
+			}
+		}
+	}
+	return vec;
 }

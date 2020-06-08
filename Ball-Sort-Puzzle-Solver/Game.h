@@ -16,12 +16,14 @@ public:
 	// returns true if the move is a valid move
 	bool isValidMove(int s, int e);
 	// do the move and return false if not valid.
-	bool move(int s, int e);
+	bool makeMove(int s, int e);
 	// return true if the game has ended.
 	bool isEnd();
 	// print the current status of the game.
 	void print();
 	// return the number of the tubes
 	int getNumTubes();
+	// generate all valid moves
+	std::vector<std::pair<int, int>> generateValidMoves();
 };
 
