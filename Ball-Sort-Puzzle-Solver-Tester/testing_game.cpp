@@ -83,3 +83,42 @@ TEST(Testing_Game, generate_moves_test) {
 	EXPECT_EQ(v[0], std::make_pair(0, 2));
 	EXPECT_EQ(v[1], std::make_pair(2, 0));
 }
+
+TEST(TESTING_TEST_CASES, All) {
+	for (int i = 0; i < 10; i++)
+	{
+		EXPECT_NO_THROW(Game g("../tests/L" + std::to_string(i + 1) + ".txt"));
+	}
+
+	for (int i = 0; i < 9; i++)
+	{
+		EXPECT_NO_THROW(Game g("../tests/L5" + std::to_string(i + 1) + ".txt"));
+	}
+
+}
+
+
+TEST(Testing_Game, hash_test) {
+	Game g("../tests/A4.txt");
+	Game g1("../tests/A4.txt");
+	g1.makeMove(2, 3);
+	g1.makeMove(3, 2);
+	EXPECT_EQ(g.getHash(),g1.getHash());
+
+	Game g2("../tests/L2.txt");
+	g2.makeMove(0, 3);
+	g2.makeMove(0, 4);
+	g2.makeMove(1, 3);
+	g2.makeMove(1, 4);
+	g2.makeMove(0, 1);
+	g2.makeMove(0, 3);
+	g2.makeMove(1, 0);
+	int hash1 = g2.getHash();
+	g2.print();
+	g2.makeMove(1, 0);
+	g2.makeMove(0, 1);
+	g2.print();
+	EXPECT_EQ(g2.getHash(),hash1);
+
+
+}
