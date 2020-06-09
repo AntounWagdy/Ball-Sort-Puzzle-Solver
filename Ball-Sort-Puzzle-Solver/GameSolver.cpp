@@ -1,9 +1,14 @@
 #include "GameSolver.h"
 
-void GameSolver::recursion_solver_helper(Game &g, std::vector<std::pair<int, int>>& moves, std::vector<std::vector<std::pair<int, int>>>& sols, std::set<Game> &visited)
+// we may need to add dp 
+void GameSolver::recursion_solver_helper(Game &g, std::vector<std::pair<int, int>>& moves, std::vector<std::pair<int, int>>& sol, std::set<Game> &visited)
 {
+	if (moves.size() > sol.size() && !sol.empty() ) {
+		return;
+	}
+
 	if (g.isEnd()) {
-		sols.push_back(moves);
+		sol = moves;
 		return;
 	}
 	std::vector<std::pair<int, int>> vec = g.generateValidMoves();
@@ -15,17 +20,18 @@ void GameSolver::recursion_solver_helper(Game &g, std::vector<std::pair<int, int
 		if (visited.find(temp) == visited.end()) {
 			visited.insert(temp);
 			moves.push_back(std::make_pair(vec[i].first, vec[i].second));
-			recursion_solver_helper(temp, moves, sols,visited);
+			recursion_solver_helper(temp, moves, sol,visited);
 			moves.pop_back();
+			visited.erase(temp);
 		}
 	}
 }
 
-std::vector<std::vector<std::pair<int, int>>> GameSolver::recursion_solve(Game g)
+std::vector<std::pair<int, int>> GameSolver::recursion_solve(Game g)
 {
 	std::vector<std::pair<int, int>> moves;
-	std::vector<std::vector<std::pair<int, int>>> sols;
+	std::vector<std::pair<int, int>> sol;
 	std::set<Game> visited;
-	recursion_solver_helper(g,moves,sols,visited);
-	return sols;
+	recursion_solver_helper(g,moves,sol,visited);
+	return sol;
 }
