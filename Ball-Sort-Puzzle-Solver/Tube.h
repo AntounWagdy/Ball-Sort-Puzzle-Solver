@@ -22,6 +22,8 @@ public:
 	// pop a ball from the stack
 	// returns true if the stack is empty.
 	bool pop(Ball &b);
+	// Get size of the tube
+	int size();
 	// returns true if the stack is full
 	bool isFull();
 	// returns true if the stack is homogenous with one color

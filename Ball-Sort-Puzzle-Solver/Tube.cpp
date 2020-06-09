@@ -24,6 +24,11 @@ bool Tube::pop(Ball& b)
 	return true;
 }
 
+int Tube::size()
+{
+	return this->tube.size();
+}
+
 bool Tube::isFull()
 {
 	return tube.size() == TUBESIZE;
