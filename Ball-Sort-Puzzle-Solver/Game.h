@@ -10,8 +10,13 @@ class Game
 {
 private:
 	std::vector<Tube> tubes;
+	long long int hash;
+	// hashing constants
+	int p;
+	int m;
+
 public:
-	Game() {}
+	Game() : p(31),m(1e9+9) { hash = 0; }
 	// initiate game from file and throw exception if the file is wrong formatted
 	Game(std::string filename);
 	// returns true if the move is a valid move
@@ -29,5 +34,11 @@ public:
 
 	// operator ==
 	bool operator==(const Game& g);
+
+	// opertor <
+	bool operator<(const Game& g) const;
+
+	// get hash value
+	int getHash();
 };
 
