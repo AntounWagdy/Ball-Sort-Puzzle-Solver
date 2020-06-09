@@ -4,8 +4,8 @@
 class GameSolver
 {
 private :
-	void static solver_helper(Game &g, std::vector<std::pair<int, int>> &moves, std::vector<std::vector<std::pair<int, int>>>& sols,std::vector<Game> &visited);
+	void static recursion_solver_helper(Game &g, std::vector<std::pair<int, int>> &moves, std::vector<std::vector<std::pair<int, int>>>& sols,std::set<Game> &visited);
 public:
-	static std::vector<std::vector<std::pair<int, int>>>  Solve(Game g);
+	static std::vector<std::vector<std::pair<int, int>>>  recursion_solve(Game g);
 };
 
