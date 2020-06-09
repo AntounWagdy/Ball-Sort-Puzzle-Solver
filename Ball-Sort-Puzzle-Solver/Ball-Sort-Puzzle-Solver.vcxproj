@@ -139,10 +139,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameSolver.h" />
     <ClInclude Include="Tube.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameSolver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Tube.cpp" />
   </ItemGroup>

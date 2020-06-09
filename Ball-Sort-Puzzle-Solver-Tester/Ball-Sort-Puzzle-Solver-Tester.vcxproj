@@ -35,6 +35,7 @@
   <ItemGroup>
     <ClCompile Include="testing_game.cpp" />
     <ClCompile Include="testing_tube.cpp" />
+    <ClCompile Include="test_solver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ball-Sort-Puzzle-Solver\Ball-Sort-Puzzle-Solver.vcxproj">

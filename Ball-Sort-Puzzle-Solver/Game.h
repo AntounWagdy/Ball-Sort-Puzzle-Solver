@@ -11,6 +11,7 @@ class Game
 private:
 	std::vector<Tube> tubes;
 public:
+	Game() {}
 	// initiate game from file and throw exception if the file is wrong formatted
 	Game(std::string filename);
 	// returns true if the move is a valid move
@@ -25,5 +26,8 @@ public:
 	int getNumTubes();
 	// generate all valid moves
 	std::vector<std::pair<int, int>> generateValidMoves();
+
+	// operator ==
+	bool operator==(const Game& g);
 };
 

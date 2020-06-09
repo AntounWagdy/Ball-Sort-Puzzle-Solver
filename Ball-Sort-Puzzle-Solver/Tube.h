@@ -28,4 +28,6 @@ public:
 	bool isHomogenous();
 	// returns true if the stack is empty
 	bool isEmpty();
+	// operator ==
+	bool operator!=(const Tube& t);
 };

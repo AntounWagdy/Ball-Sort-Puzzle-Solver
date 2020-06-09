@@ -114,7 +114,7 @@ std::vector<std::pair<int, int>> Game::generateValidMoves()
 	{
 		for (size_t j = 0; j < tubes.size(); j++)
 		{
-			if (i != j) {
+			if (i != j && !(tubes[i].isFull() && tubes[i].isHomogenous())) {
 				if (this->isValidMove(i, j)) {
 					vec.push_back(std::make_pair(i, j));
 				}
@@ -122,4 +122,15 @@ std::vector<std::pair<int, int>> Game::generateValidMoves()
 		}
 	}
 	return vec;
+}
+
+bool Game::operator==(const Game& g)
+{
+	for (size_t i = 0; i < tubes.size(); i++)
+	{
+		if (tubes[i] != g.tubes[i]) {
+			return false;
+		}
+	}
+	return true;
 }

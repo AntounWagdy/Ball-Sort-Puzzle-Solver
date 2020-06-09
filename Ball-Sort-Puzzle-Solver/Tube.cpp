@@ -48,3 +48,8 @@ bool Tube::isEmpty()
 	return tube.empty();
 }
 
+bool Tube::operator!=(const Tube& t)
+{
+	return this->tube != t.tube;
+}
+
