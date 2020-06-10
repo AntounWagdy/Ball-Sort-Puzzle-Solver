@@ -61,7 +61,7 @@ TEST(Testing_Game, end_test) {
 
 TEST(Testing_Game, generate_moves_test) {
 	Game g("../tests/A4.txt");
-	std::vector<std::pair<int,int>> v =  g.generateValidMoves();
+	std::vector<std::pair<int,int>> v =  g.generateGoodValidMoves();
 	std::pair<int, int> p[3] = { std::make_pair(0,3),std::make_pair(1,3) ,std::make_pair(2,3) };
 
 	for (int i = 0 ; i <v.size();i++)
@@ -70,7 +70,7 @@ TEST(Testing_Game, generate_moves_test) {
 	}
 	g.makeMove(1, 3);
 
-	v = g.generateValidMoves();
+	v = g.generateGoodValidMoves();
 	
 	EXPECT_EQ(v[0], p[0]);
 	EXPECT_EQ(v[1], p[2]);
@@ -79,7 +79,7 @@ TEST(Testing_Game, generate_moves_test) {
 	g.makeMove(2,3);
 	g.makeMove(2,3);
 
-	v = g.generateValidMoves();
+	v = g.generateGoodValidMoves();
 	EXPECT_EQ(v[0], std::make_pair(0, 2));
 	EXPECT_EQ(v[1], std::make_pair(2, 0));
 }

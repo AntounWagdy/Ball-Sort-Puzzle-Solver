@@ -30,7 +30,7 @@ public:
 	// return the number of the tubes
 	int getNumTubes();
 	// generate all valid moves
-	std::vector<std::pair<int, int>> generateValidMoves();
+	std::vector<std::pair<int, int>> generateGoodValidMoves();
 
 	// operator ==
 	bool operator==(const Game& g);
@@ -39,6 +39,6 @@ public:
 	bool operator<(const Game& g) const;
 
 	// get hash value
-	int getHash();
+	long long getHash();
 };
 

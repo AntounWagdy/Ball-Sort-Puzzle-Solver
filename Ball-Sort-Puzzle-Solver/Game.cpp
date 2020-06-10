@@ -21,8 +21,8 @@ Game::Game(std::string filename) : p(31), m(1e9 + 9)
 	this->tubes.resize(num);
 
 	std::getline(f, line); // ignore this line
-	
-	while(std::getline(f, line))
+
+	while (std::getline(f, line))
 	{
 		for (size_t j = 0; j < line.size(); j++)
 		{
@@ -123,7 +123,7 @@ void Game::print()
 			temp.pop(b);
 			current[j++] = b;
 		}
-		for (int i = j-1; i >= 0; i--)
+		for (int i = j - 1; i >= 0; i--)
 		{
 			std::cout << current[i];
 		}
@@ -136,18 +136,26 @@ int Game::getNumTubes()
 	return tubes.size();
 }
 
-std::vector<std::pair<int, int>> Game::generateValidMoves()
+std::vector<std::pair<int, int>> Game::generateGoodValidMoves()
 {
 	std::vector<std::pair<int, int>> vec;
+	bool isH1, isH2;
+
 	for (size_t i = 0; i < tubes.size(); i++)
 	{
 		for (size_t j = 0; j < tubes.size(); j++)
 		{
+			isH1 = tubes[i].isHomogenous();
+			isH2 = tubes[j].isHomogenous();
+
 			// by adding the condition after the first condition, we generate only the good moves
-			if (i != j && !(tubes[i].isFull() && tubes[i].isHomogenous())) {
-				if (this->isValidMove(i, j) && !(tubes[i].isHomogenous() && tubes[j].isEmpty())) {
-					vec.push_back(std::make_pair(i, j));
-				}
+			if (i != j &&
+				isValidMove(i, j) && // check if valid move
+				!(isH1 && tubes[j].isEmpty()) &&
+				!(isH1 && isH2 && tubes[i].size() > tubes[j].size()) &&
+				!(tubes[i].isFull() && isH1) // don't move from full and homogenous tube
+				) {
+				vec.push_back(std::make_pair(i, j));
 			}
 		}
 	}
@@ -171,6 +179,6 @@ bool Game::operator<(const Game& g) const
 }
 
 
-int Game::getHash() {
+long long Game::getHash() {
 	return hash;
 }

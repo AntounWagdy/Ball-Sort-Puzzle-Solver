@@ -36,6 +36,9 @@ bool Tube::isFull()
 
 bool Tube::isHomogenous()
 {
+	if (tube.size() == 0) {
+		return true;
+	}
 	std::stack<Ball> temp = tube;
 	char color = temp.top();
 	temp.pop();
