@@ -13,6 +13,13 @@ struct threaded_struct {
 	std::pair<int, int>first;
 
 };
+
+struct heuristic_struct {
+	Game current;
+	std::vector<std::pair<int, int>> path;
+};
+
+bool operator<(const heuristic_struct& h1, const heuristic_struct& h2);
 class GameSolver
 {
 private :
@@ -27,8 +34,6 @@ public:
 	static std::vector<std::pair<int, int>>  recursion_solve(Game g);
 	static std::vector<std::pair<int, int>>  iteration_solve(Game g);
 	static std::vector<std::pair<int, int>>  threaded_iteration_solve(Game g);
-
-
-
+	static std::vector<std::pair<int, int>>  iteration_solve_with_heuristic(Game g);
 };
 

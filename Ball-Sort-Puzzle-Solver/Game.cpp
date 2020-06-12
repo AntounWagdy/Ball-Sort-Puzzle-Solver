@@ -182,3 +182,33 @@ bool Game::operator<(const Game& g) const
 long long Game::getHash() {
 	return hash;
 }
+
+int Game::getHeuristic() const
+{
+	int score = 0;
+	Tube temp;
+	char c2,c1;
+	int cnt = 1;
+	for (size_t i = 0; i < tubes.size(); i++)
+	{
+		if (tubes[i].isEmpty()) {
+			score += 10;
+		}
+		else {
+			temp = tubes[i];
+			temp.pop(c1);
+			while (!temp.isEmpty()) {
+				temp.pop(c2);
+				if (c1 == c2) {
+					cnt++;
+				}
+				else {
+					c1 = c2;
+					cnt = 1;
+				}
+			}
+			score += (5 * cnt);
+		}
+	}
+	return score;
+}

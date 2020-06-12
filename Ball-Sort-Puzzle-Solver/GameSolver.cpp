@@ -164,3 +164,45 @@ std::vector<std::pair<int, int>> GameSolver::threaded_iteration_solve(Game g)
 	WaitForMultipleObjects(moves.size(), handlers, true, INFINITE);
 	return threaded_soln;
 }
+
+std::vector<std::pair<int, int>> GameSolver::iteration_solve_with_heuristic(Game g)
+{
+	std::set<Game> visited;
+	
+	std::priority_queue<heuristic_struct> Qelements;
+	Qelements.push({g,std::vector < std::pair<int, int>>() });
+
+	heuristic_struct current;
+
+	heuristic_struct newH;
+	
+	std::vector<std::pair<int, int>> moves;
+	bool found = false;
+	while (!found) {
+		current = Qelements.top();
+		Qelements.pop();
+		moves = current.current.generateGoodValidMoves();
+		for (size_t i = 0; i < moves.size(); i++)
+		{
+			newH = current;
+			newH.current.makeMove(moves[i].first, moves[i].second);
+			newH.path.push_back(moves[i]);
+
+			if (newH.current.isEnd()) {
+				found = true;
+				break;
+			}
+
+			if (visited.find(newH.current) == visited.end()) {
+				visited.insert(newH.current);
+				Qelements.push(newH);
+			}
+		}
+	}
+	return newH.path;
+}
+
+bool operator<(const heuristic_struct& h1, const heuristic_struct& h2)
+{
+	return h1.current.getHeuristic() < h2.current.getHeuristic();
+}

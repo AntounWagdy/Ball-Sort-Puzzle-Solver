@@ -40,5 +40,7 @@ public:
 
 	// get hash value
 	long long getHash();
+
+	int getHeuristic() const;
 };
 
