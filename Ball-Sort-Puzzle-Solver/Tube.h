@@ -18,18 +18,18 @@ public:
 	// returns false if the stack is full.
 	bool push(Ball);
 	// returns the last element from the tube
-	Ball top();
+	Ball top() const;
 	// pop a ball from the stack
 	// returns true if the stack is empty.
 	bool pop(Ball &b);
 	// Get size of the tube
-	int size();
+	int size() const;
 	// returns true if the stack is full
-	bool isFull();
+	bool isFull() const;
 	// returns true if the stack is homogenous with one color
-	bool isHomogenous();
+	bool isHomogenous() const;
 	// returns true if the stack is empty
-	bool isEmpty();
+	bool isEmpty() const;
 	// operator ==
 	bool operator!=(const Tube& t);
 };

@@ -9,7 +9,7 @@ bool Tube::push(Ball b)
 	return true;
 }
 
-Ball Tube::top()
+Ball Tube::top() const
 {
 	return tube.top();
 }
@@ -24,17 +24,17 @@ bool Tube::pop(Ball& b)
 	return true;
 }
 
-int Tube::size()
+int Tube::size() const
 {
 	return this->tube.size();
 }
 
-bool Tube::isFull()
+bool Tube::isFull() const
 {
 	return tube.size() == TUBESIZE;
 }
 
-bool Tube::isHomogenous()
+bool Tube::isHomogenous() const
 {
 	if (tube.size() == 0) {
 		return true;
@@ -51,7 +51,7 @@ bool Tube::isHomogenous()
 	return true;
 }
 
-bool Tube::isEmpty()
+bool Tube::isEmpty() const
 {
 	return tube.empty();
 }
