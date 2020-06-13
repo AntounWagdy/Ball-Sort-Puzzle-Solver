@@ -230,7 +230,23 @@ TEST(Testing_Game_sovler, heurstic_advanced) {
 		EXPECT_TRUE(temp.isEnd());
 		//std::cout << std::endl;
 		std::cout << "Test L5" << k + 1 << " is finished." << std::endl;
-
-
 	}
+}
+
+// l second (WOW !)
+TEST(Testing_Game_sovler, heurstic_advanced_level_275) {
+	Game g("../tests/L275.txt");
+	//g.print();
+	auto res = GameSolver::iteration_solve_with_heuristic(g);
+	std::cout << res.size() << std::endl;
+
+	Game temp("../tests/L275.txt");
+	for (size_t j = 0; j < res.size(); j++)
+	{
+		//std::cout << res[i][j].first << " " << res[i][j].second << std::endl;
+		temp.makeMove(res[j].first, res[j].second);
+	}
+	EXPECT_TRUE(temp.isEnd());
+	//std::cout << std::endl;
+	std::cout << "Test L275 is finished." << std::endl;
 }

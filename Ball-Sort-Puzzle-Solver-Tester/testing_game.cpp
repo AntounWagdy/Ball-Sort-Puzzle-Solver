@@ -94,6 +94,9 @@ TEST(TESTING_TEST_CASES, All) {
 	{
 		EXPECT_NO_THROW(Game g("../tests/L5" + std::to_string(i + 1) + ".txt"));
 	}
+	
+	EXPECT_NO_THROW(Game g("../tests/L275.txt"));
+
 
 }
 
