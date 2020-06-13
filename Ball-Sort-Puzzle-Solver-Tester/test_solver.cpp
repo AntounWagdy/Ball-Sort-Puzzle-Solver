@@ -140,12 +140,60 @@
 
 // 72050 ms for this funciton to end => on average 7.2 seconds in this function to finish one easy level (Debug mode)
 // 1808 ms for this funciton to end => on average 0.1 seconds in this function to finish one easy level (Release mode)
-TEST(Testing_Game_sovler, threaded_simple) {
+//TEST(Testing_Game_sovler, threaded_simple) {
+//	for (int k = 0; k < 10; k++)
+//	{
+//		Game g("../tests/L" + std::to_string(k + 1) + ".txt");
+//		//g.print();
+//		auto res = GameSolver::threaded_iteration_solve(g);
+//		std::cout << res.size() << std::endl;
+//
+//		Game temp("../tests/L" + std::to_string(k + 1) + ".txt");
+//		for (size_t j = 0; j < res.size(); j++)
+//		{
+//			//std::cout << res[i][j].first << " " << res[i][j].second << std::endl;
+//			temp.makeMove(res[j].first, res[j].second);
+//		}
+//		EXPECT_TRUE(temp.isEnd());
+//		//std::cout << std::endl;
+//		std::cout << "Test L" << k + 1 << " is finished." << std::endl;
+//
+//
+//	}
+//}
+//
+//// 158442 ms for this funciton to end => on average 18 seconds in this function to finish one advanced level (Release mode)
+//TEST(Testing_Game_sovler, threaded_advanced) {
+//	for (int k = 0; k < 9; k++)
+//	{
+//		Game g("../tests/L5" + std::to_string(k + 1) + ".txt");
+//		//g.print();
+//		auto res = GameSolver::threaded_iteration_solve(g);
+//		std::cout << res.size() << std::endl;
+//
+//		Game temp("../tests/L5" + std::to_string(k + 1) + ".txt");
+//		for (size_t j = 0; j < res.size(); j++)
+//		{
+//			//std::cout << res[i][j].first << " " << res[i][j].second << std::endl;
+//			temp.makeMove(res[j].first, res[j].second);
+//		}
+//		EXPECT_TRUE(temp.isEnd());
+//		//std::cout << std::endl;
+//		std::cout << "Test L5" << k + 1 << " is finished." << std::endl;
+//
+//
+//	}
+//}
+
+
+ // 843 ms for this funciton to end => on average 0.08 seconds in this function to finish one easy level (Debug mode)
+ // 34 ms for this funciton to end => on average 0.003 seconds in this function to finish one easy level (Release mode)
+TEST(Testing_Game_sovler, heurstic_simple) {
 	for (int k = 0; k < 10; k++)
 	{
 		Game g("../tests/L" + std::to_string(k + 1) + ".txt");
 		//g.print();
-		auto res = GameSolver::threaded_iteration_solve(g);
+		auto res = GameSolver::iteration_solve_with_heuristic(g);
 		std::cout << res.size() << std::endl;
 
 		Game temp("../tests/L" + std::to_string(k + 1) + ".txt");
@@ -162,13 +210,15 @@ TEST(Testing_Game_sovler, threaded_simple) {
 	}
 }
 
-// 158442 ms for this funciton to end => on average 18 seconds in this function to finish one advanced level (Release mode)
-TEST(Testing_Game_sovler, threaded_advanced) {
+
+// 1136 ms for this funciton to end => on average 0.1 seconds in this function to finish one easy level (debug mode)
+// 57 ms for this funciton to end => on average 0.005 seconds in this function to finish one easy level (Release mode)
+TEST(Testing_Game_sovler, heurstic_advanced) {
 	for (int k = 0; k < 9; k++)
 	{
 		Game g("../tests/L5" + std::to_string(k + 1) + ".txt");
 		//g.print();
-		auto res = GameSolver::threaded_iteration_solve(g);
+		auto res = GameSolver::iteration_solve_with_heuristic(g);
 		std::cout << res.size() << std::endl;
 
 		Game temp("../tests/L5" + std::to_string(k + 1) + ".txt");

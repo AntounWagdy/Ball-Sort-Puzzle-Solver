@@ -119,6 +119,11 @@ TEST(Testing_Game, hash_test) {
 	g2.makeMove(0, 1);
 	g2.print();
 	EXPECT_EQ(g2.getHash(),hash1);
+}
 
-
+TEST(Testing_Game, heuristic_test) {
+	Game g("../tests/A4.txt");
+	EXPECT_EQ(g.getHeuristic(), 25);
+	Game g2("../tests/L2.txt");
+	EXPECT_EQ(g2.getHeuristic(), 40);
 }
