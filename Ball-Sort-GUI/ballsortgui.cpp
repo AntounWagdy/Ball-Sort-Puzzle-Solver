@@ -2,6 +2,12 @@
 
 std::vector<QLabel*> BallSortGUI::tubes;
 Game BallSortGUI::g;
+std::vector<std::pair<int, int>> BallSortGUI::solution;
+QColor colors[] = { QColor(128,0,0) ,QColor(170,110,40),QColor(128,128,0) ,QColor(0,128,128) ,QColor(0,0,128),QColor(0,0,0)
+                    ,QColor(230,25,75) ,QColor(245,130,48) ,QColor(225,225,25) ,QColor(210,245,60),QColor(60,180,75),QColor(70,240,240)
+                    ,QColor(0,130,200),QColor(145,30,180),QColor(240,50,230),QColor(128,128,128),QColor(250,190,212),QColor(255,215,180)
+                    ,QColor(255,250,200),QColor(170,255,195),QColor(220,190,255),QColor(255,255,255)
+                    ,QColor(255,0,0),QColor(0,255,0),QColor(0,0,255),QColor(0,0,128) };
 
 BallSortGUI::BallSortGUI(QWidget *parent)
     : QWidget(parent)
@@ -9,6 +15,9 @@ BallSortGUI::BallSortGUI(QWidget *parent)
     ui.setupUi(this);
     this->setStyleSheet("background-color : white;");
     QWidget::showFullScreen();
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(makeMove()));
+    timer->start(300);
  }
 
 void BallSortGUI::paintEvent(QPaintEvent* event)
@@ -25,20 +34,9 @@ void BallSortGUI::paintEvent(QPaintEvent* event)
         index = temp.size()-1;
         while (!temp.isEmpty()) {
             temp.pop(b);
-            drawBall(painter, i, index--, Qt::GlobalColor(6+((b-'A')%14)));
+            drawBall(painter, i, index--, colors[b-'A']);
         }
     }
-    if (!animation) {
-        animation = new QPropertyAnimation(tubes[0], "pos");
-        animation->setDuration(500);
-        animation->setStartValue(tubes[0]->pos());
-        animation->setStartValue(QPoint(tubes[0]->pos().x(), tubes[0]->pos().y() - 100));
-        animation->start();
-    }
-    if (animation->currentTime() == 500) {
-        animation = NULL;
-    }
-
 }
 
 
@@ -87,6 +85,8 @@ void BallSortGUI::initiateScreenAndTubes()
     BallSortGUI* overlay = new BallSortGUI();
     overlay->setParent(wrapper);
     wrapper->showFullScreen();
+    GameSolver solver;
+    solution = solver.iteration_solve_with_heuristic(g);
 }
 
 void BallSortGUI::drawBall(QPainter& painter, int tubeNum, int index, QColor color)
