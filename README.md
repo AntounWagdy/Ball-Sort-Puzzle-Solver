@@ -25,7 +25,7 @@ Multiple solution has been tested over so many test cases. test cases has been b
  
 Four different solutions has been implemented: <br>
  1. Algorithm 1 : this is the recursive solution. We search the whole tree using recursion (DFS) to reach to the goal solution.<br>
- 2. Algorithm 2: this is the iterative solution.  We search the whole tree but not using queues.<br>
+ 2. Algorithm 2: this is the iterative solution.  We search the whole tree but using queues.<br>
  3. Algorithm 3: this is another version of the iterative solution where we use threading to take less time.<br>
  4. Algorithm 4: another version of the iterative solution where we use heuristic calculations to take the most promising state to the next iteration.<br>
 
