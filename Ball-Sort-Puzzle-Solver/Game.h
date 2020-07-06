@@ -42,5 +42,7 @@ public:
 	long long getHash();
 
 	int getHeuristic() const;
+	
+	friend class BallSortGUI;
 };
 
