@@ -22,11 +22,12 @@ After finishing the prerequisites you run **Ball-Sort-GUI**. You may need to cha
 Multiple solution has been tested over so many test cases. test cases has been broken into two types:
  1. Easy test cases: Those are the levels [1-10] in the game.
  2. Hard test cases: Those are the levels [50-60] in the game and also some other chosen hard levels.
-Four different solutions has been implemented:
-1- Algorithm 1 : this is the recursive solution. We search the whole tree using recursion (DFS) to reach to the goal solution.
-2- Algorithm 2: this is the iterative solution.  We search the whole tree but not using queues.
-3- Algorithm 3: this is another version of the iterative solution where we use threading to take less time.
-4- Algorithm 4: another version of the iterative solution where we use heuristic calculations to take the most promising state to the next iteration.
+ 
+Four different solutions has been implemented: <br>
+ 1. Algorithm 1 : this is the recursive solution. We search the whole tree using recursion (DFS) to reach to the goal solution.<br>
+ 2. Algorithm 2: this is the iterative solution.  We search the whole tree but not using queues.<br>
+ 3. Algorithm 3: this is another version of the iterative solution where we use threading to take less time.<br>
+ 4. Algorithm 4: another version of the iterative solution where we use heuristic calculations to take the most promising state to the next iteration.<br>
 
 And here is the timing of each algorithm on each split of the test cases:
 
