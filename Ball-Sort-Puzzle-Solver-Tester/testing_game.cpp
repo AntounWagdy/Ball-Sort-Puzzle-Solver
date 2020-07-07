@@ -96,7 +96,8 @@ TEST(TESTING_TEST_CASES, All) {
 	}
 	
 	EXPECT_NO_THROW(Game g("../tests/L275.txt"));
-
+	EXPECT_NO_THROW(Game g("../tests/L275.txt"));
+	EXPECT_NO_THROW(Game g("../tests/L107.txt"));
 
 }
 

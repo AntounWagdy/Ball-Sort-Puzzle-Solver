@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ball-Sort-Puzzle-Solver-Tes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ball-Sort-GUI", "Ball-Sort-GUI\Ball-Sort-GUI.vcxproj", "{54EA106A-2F80-4103-A5F4-D49E690F564F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1209A2C0-8F80-4AC2-9423-3C54D3B42CC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
