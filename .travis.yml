@@ -8,6 +8,7 @@ install:
   - choco install dotnetcore-sdk
   - choco install paket --pre
   - dotnet restore
+  - paket restore
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver/Ball-Sort-Puzzle-Solver.vcxproj
