@@ -3,11 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# add files for packages
-!packages/
-!packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1/lib/native/v140/windesktop/msvcstl/static/rt-dyn/x64/
-!packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1/lib/native/v140/windesktop/msvcstl/static/rt-dyn/x86/
-
 
 # User-specific files
 *.rsuser
@@ -336,3 +331,8 @@ healthchecksdb
 
 
 
+
+# add files for packages
+!packages/
+!packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1/lib/native/v140/windesktop/msvcstl/static/rt-dyn/x64/
+!packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1/lib/native/v140/windesktop/msvcstl/static/rt-dyn/x86/
