@@ -9,6 +9,7 @@ install:
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver/Ball-Sort-Puzzle-Solver.vcxproj
-  - dotnet add .\Ball-Sort-Puzzle-Solver-Tester\Ball-Sort-Puzzle-Solver-Tester.vcxproj package googletest --version 1.8.1
+  - cd .\Ball-Sort-Puzzle-Solver-Tester\
+  - dotnet add package googletest --version 1.8.1
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver-Tester/Ball-Sort-Puzzle-Solver-Tester.vcxproj
   
