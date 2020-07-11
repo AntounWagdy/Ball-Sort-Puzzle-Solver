@@ -1,6 +1,5 @@
 os: windows
 language: cpp
-cache: ccache
 env:
   - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
 install:
@@ -10,5 +9,6 @@ install:
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver/Ball-Sort-Puzzle-Solver.vcxproj
+  - dotnet restore
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver-Tester/Ball-Sort-Puzzle-Solver-Tester.vcxproj
   
