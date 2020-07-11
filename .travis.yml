@@ -6,12 +6,11 @@ env:
 install:
   - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
   - choco install dotnetcore-sdk
-  - dotnet restore
+  - choco install nugetpackagemanager
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver/Ball-Sort-Puzzle-Solver.vcxproj
-  - cd Ball-Sort-Puzzle-Solver-Test\
-  - msbuild -t:restore
+  - Install-Package Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn -Version 1.8.1
   #- dotnet add package Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn --version 1.8.1.3
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver-Tester/Ball-Sort-Puzzle-Solver-Tester.vcxproj
   
