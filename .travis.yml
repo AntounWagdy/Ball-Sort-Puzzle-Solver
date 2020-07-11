@@ -6,7 +6,6 @@ install:
   - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
   - choco install dotnetcore-sdk
   - dotnet restore
-  - nuget restore Ball-Sort-Puzzle-Solver.sln
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver/Ball-Sort-Puzzle-Solver.vcxproj
