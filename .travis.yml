@@ -18,4 +18,5 @@ script:
   #- paket add Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn --version 1.8.1
   #- dotnet add package Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn --version 1.8.1.3
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver-Tester/Ball-Sort-Puzzle-Solver-Tester.vcxproj
+  - .\x64\Release\Ball-Sort-Puzzle-Solver-Tester.exe
   
