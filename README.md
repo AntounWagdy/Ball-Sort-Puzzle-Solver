@@ -1,4 +1,5 @@
 # Ball-Sort-Puzzle-Solver
+[![Build Status](https://travis-ci.org/AntounWagdy/Ball-Sort-Puzzle-Solver.svg?branch=master)](https://travis-ci.org/AntounWagdy/Ball-Sort-Puzzle-Solver)
 
 Ball-Sort-Puzzle-Solver is a c++ based project to find and analyse solutions for the game known as **"Ball Sort Puzzle"**. You may test the game play at [Google Play Store]([https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle](https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle)).
 
