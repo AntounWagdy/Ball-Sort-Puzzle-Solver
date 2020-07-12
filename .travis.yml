@@ -13,4 +13,3 @@ script:
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 Ball-Sort-Puzzle-Solver-Tester/Ball-Sort-Puzzle-Solver-Tester.vcxproj
   - mv ./tests ../tests
   - ./Ball-Sort-Puzzle-Solver-Tester/x64/Release/Ball-Sort-Puzzle-Solver-Tester.exe
-  
