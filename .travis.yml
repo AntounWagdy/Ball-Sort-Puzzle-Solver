@@ -6,8 +6,8 @@ env:
 install:
   - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
   #- choco install dotnetcore-sdk
-  - choco install paket --pre
-  #- choco install nuget.commandline --pre 
+  #- choco install paket --pre
+  - choco install nuget.commandline --pre 
   #- dotnet restore
   #- paket restore
   - nuget restore Ball-Sort-Puzzle-Solver.sln
