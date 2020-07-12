@@ -2,26 +2,10 @@
 #include"../Ball-Sort-Puzzle-Solver/Game.h"
 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <direct.h>
-
-void PrintFullPath(char* partialPath)
-{
-	char full[_MAX_PATH];
-	if (_fullpath(full, partialPath, _MAX_PATH) != NULL)
-		printf("Full path is: %s\n", full);
-	else
-		printf("Invalid path\n");
-}
-
 
 TEST(Testing_Game, exceptions) {
 	EXPECT_ANY_THROW(Game g("../tests/invalid.txt"));
 	EXPECT_ANY_THROW(Game g("../tests/notExist.txt"));
-	PrintFullPath(".\\");
-
 }
 
 TEST(Testing_Game, test_initiate) {
