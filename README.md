@@ -42,7 +42,8 @@ And here is the timing of each algorithm on each split of the test cases:
   
   ## Output
   This is the GIF showing how the program runs with a 300 ms interval between each two moves.
-![GIF to show the program running](https://github.com/AntounWagdy/Ball-Sort-Puzzle-Solver/blob/master/demo.gif).
+![GIF to show the program running](https://github.com/AntounWagdy/Ball-Sort-Puzzle-Solver/blob/master/demo.gif)
+
   Also you may check [this website]([https://ball-sort-solver-283820.uc.r.appspot.com/]) based on this algorithm or [the repo]([https://github.com/AntounWagdy/Ball-Sort-Solver-Website/tree/master]) it depends on. 
 ## License
 Copyright (c) 2020 Antoun Wagdy.
